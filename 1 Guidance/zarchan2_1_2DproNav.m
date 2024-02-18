@@ -9,8 +9,9 @@
 % XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 clear all; clc;
-fprintf 'starting'
+
 %% initialization
+fprintf '...Initializing varibles'
 n = 0;
 Vm = 3000.;  % missile velocity
 Vt = 1000.;  % target velocity
@@ -46,7 +47,10 @@ Vtm2 = Vt2 - Vm2;
 % closing velocity
 Vc = -(Rtm1*Vtm1 + Rtm2*Vtm2)/Rtm;
 
+%% Main loop
+fprintf '...Starting main loop'
 while Vc >= 0
+  fprintf 'Vclosing = %d',Vc
   if Rtm > 1000
     h = 0.0002;
   else
@@ -120,8 +124,7 @@ Rtm
 %% Plotting
 figure
 plot(arrayRt1,arrayRt2,arrayRm1,arrayRm2)
-grid on; hold on;
-%plot(arrayRm1,arrayRm2)
+grid on;
 title '2D Tactical Missile-Target Engagement Sim'
 xlabel 'Downrange (ft)'
 ylabel 'Altitude (ft)'
