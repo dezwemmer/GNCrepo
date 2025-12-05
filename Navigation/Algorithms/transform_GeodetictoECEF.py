@@ -10,6 +10,8 @@
 import math
 import const_wgs84 as const
 
+def DMS2rad(deg,min,sec):
+
 
 def geodetic2ECEF(latRad, longRad, altMeter):
     # define ellipsoid
@@ -32,6 +34,7 @@ def geodetic2ECEF(latRad, longRad, altMeter):
     print(x, ",", y, ",", z)
 
 def main():
+    DMS2rad(34,0,0.00174)
     geodetic2ECEF(.5934119541,-2.0478571082,251.702) # rad,rad,m
     # TODO: convert deg/min/sec to rad
 
